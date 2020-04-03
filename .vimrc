@@ -1,6 +1,6 @@
 syntax enable
 
-colorscheme	jellybeans
+"colorscheme	jellybeans
 set rnu
 set number
 set foldenable 

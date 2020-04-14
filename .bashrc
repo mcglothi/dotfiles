@@ -17,3 +17,4 @@ export PATH
 
 # User specific aliases and functions
 alias dotfiles='/usr/bin/git --git-dir=/home/mcglothi/.dotfiles/ --work-tree=/home/mcglothi'
+alias sys='systemctl'

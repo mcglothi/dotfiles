@@ -165,3 +165,14 @@ alias serverfans10='ipmitool -I lanplus -H 10.10.10.1 -U root -P Tinjat1! raw 0x
 alias serverfans20='ipmitool -I lanplus -H 10.10.10.1 -U root -P Tinjat1! raw 0x30 0x30 0x02 0xff 0x14'
 alias serverfansinit='ipmitool -I lanplus -H 10.10.10.1 -U root -P Tinjat1! raw 0x30 0x30 0x01 0x00'
 export PATH=~/.npm-global/bin:$PATH
+
+# aikb — env vars (tokens written by bootstrap)
+[[ -f ~/.aikb-env ]] && source ~/.aikb-env
+
+# bwu — unlock Bitwarden vault and persist session for scripts
+bwu() {
+  export BW_SESSION=$(bw unlock --raw)
+  echo "$BW_SESSION" > ~/.bw_session
+  chmod 600 ~/.bw_session
+  echo "[bw] vault unlocked"
+}
